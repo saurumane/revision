@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+{%extends 'baseadv.html'%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    {%block baseblock%}
+<div class="container" align="center">
+    <form method="post">
+        {%csrf_token%}
+      
+        AREA:<input type="text" name="area_type" value="{{obj.area_type}}">
+        <p></p>
+        SQFT:<input type="text" name="Total_sqft" value="{{obj.Total_sqft}}">
+        <p></p>
+        Bhk:<input type="text" name="Bhk" value="{{obj.Bhk}}">
+        <p></p>
+        location:<input type="text" name="location" value="{{obj.location}}">
+        <p></p>
+        Phone:<input type="text" name="phone_no" value="{{obj.phone_no}}">
+        <p></p>
+        Availiable:<input type="text" name="availiability" value="{{obj.availiability}}">
+        <p></p>
+        <input type="submit" name="submit" value="submit">
+    </form>
+</div>
+{%endblock%}
+</body>
+</html>

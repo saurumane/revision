@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+{%extends 'baseadv.html'%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{%block baseblock%}
+{%if obj%}
+<div class="container" align="center">
+<table align="center" border="2px">
+    <thead>
+       
+    <th>area_type</th>
+    <th>availiability</th>
+    <th>Total_sqft</th>
+    <th>Bhk</th>
+    <th>location</th>
+    <th>phone_no</th>
+    <th>Operations</th>
+    </thead>
+    {%for row in obj%}
+    <tr>
+        
+        <td>{{row.area_type}}</td>
+        <td>{{row.availiability}}</td>
+        <td>{{row.Total_sqft}}</td>
+        <td>{{row.Bhk}}</td>
+        <td>{{row.location}}</td>
+        <td>{{row.phone_no}}</td>
+        <td><a href="/delete/{{row.id}}" class ="btn btn-danger">Delete</a></td>
+        <td><a href="/updated/{{row.id}}" class ="btn btn-danger">Update</a></td>
+
+    </tr>
+    {%endfor%}
+    {%else%}
+    <h1>No data Present</h1>
+    {%endif%}
+</table>
+<div class="container" align="center">
+<a href="/">Preivious_page</a>
+</div>
+{%endblock%}
+
+</body>
+</html>
